@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main()
+{
+ll n,maxm=0,s=0;
+cin>>n;
+ll a[n];
+for(ll i=0;i<n;i++)
+{
+   cin>>a[i];
+   s+=a[i];
+   maxm=max(maxm,a[i]);
+}
+if(maxm>s-maxm)
+    cout<<2*maxm;
+else
+    cout<<s;
+return 0;
+}
