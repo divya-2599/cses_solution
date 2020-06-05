@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main()
+{
+ll n,x,sum=0,c=0;
+cin>>n>>x;
+ ll a[n];
+ for(ll i=0;i<n;i++)
+ {
+     cin>>a[i];
+ }
+sort(a,a+n);
+ll y=n-1,z=0;
+while(z<=y)
+{
+    if(a[y]+a[z]>x)
+        y--;
+    else
+    {
+        z++;
+        y--;
+    }
+    c++;
+}
+cout<<c;
+return 0;
+}
