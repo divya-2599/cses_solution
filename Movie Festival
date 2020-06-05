@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+bool sortbysec(const pair<ll,ll> &a,const pair<ll,ll> &b)
+{
+    return (a.second<b.second);
+}
+int main()
+{
+ll n;
+cin>>n;
+ll x,y;
+vector<pair<ll,ll>> v,v1;
+while(n--)
+{
+    cin>>x>>y;
+    v.push_back({x,y});
+}
+sort(v.begin(),v.end(),sortbysec);
+v1.push_back({v[0].first,v[0].second});
+ll c=1;
+for(ll i=1;i<v.size();i++)
+{
+  if(v[i].first>=v1.back().second)
+  {
+      c++;
+      v1.push_back({v[i].first,v[i].second});
+  }
+ 
+}
+cout<<c;
+return 0;
+}
