@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main()
+{
+    char str[1000001];
+    cin>>str;
+    int x=strlen(str),c=0,maxm=INT_MIN;
+    for(int i=1;i<x;i++)
+    {
+      if(str[i]==str[i-1])
+      {
+          c++;
+          maxm=max(maxm,c);
+      }
+      else
+        c=0;
+    }
+    maxm=max(maxm,c);
+    cout<<maxm+1<<endl;
+return 0;
+}
