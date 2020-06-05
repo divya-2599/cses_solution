@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main()
+{
+ll n;
+cin>>n;
+ll a[n],res=1;
+set<ll> s;
+for(ll i=0;i<n;i++)
+   cin>>a[i];
+   ll i=0,j=0;
+   while(j<n)
+   {
+     if(s.find(a[j])!=s.end())
+     {
+         res=max(res,j-i);
+         while(a[i]!=a[j])
+         {
+             s.erase(a[i++]);
+         }
+         i++;
+     }
+     else
+     {
+         s.insert(a[j]);
+     }
+     j++;
+   }
+   res=max(res,j-i);
+   cout<<res;
+return 0;
+}
