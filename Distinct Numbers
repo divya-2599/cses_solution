@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main()
+{
+int n;
+cin>>n;
+ll a[n],c=0;
+map<ll,ll> mp;
+for(int i=0;i<n;i++)
+{
+    cin>>a[i];
+    mp[a[i]]++;
+}
+for(auto it=mp.begin();it!=mp.end();it++)
+{
+    if(it->second>0)
+        c++;
+}
+cout<<c;
+return 0;
+}
