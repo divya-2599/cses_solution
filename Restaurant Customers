@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+bool sortbysec(const pair<ll,ll> &a,const pair<ll,ll> &b)
+{
+    return (a.second<b.second);
+}
+int main()
+{
+ll n;
+cin>>n;
+ll x,y,a[n],b[n];
+for(int i=0;i<n;i++)
+{
+    cin>>x>>y;
+    a[i]=x;
+    b[i]=y;
+}
+sort(a,a+n);
+sort(b,b+n);
+ll p=0,r=0,maxm=INT_MIN,c=0;
+while(p<n && r<n)
+{
+    if(a[p]<=b[r])
+       {
+           c++;
+           p++;
+       }
+        else
+        {
+            c--;
+            r++;
+        }
+        maxm=max(maxm,c);
+}
+cout<<maxm;
+return 0;
+}
