@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main()
+{
+ll n;
+cin>>n;
+ll a[n],sum;
+for(int i=0;i<n;i++)
+{
+   cin>>a[i];
+}
+sort(a,a+n);
+sum=a[n/2];
+ll c=0;
+for(int i=0;i<n;i++)
+{
+    c+=abs(sum-a[i]);
+}
+cout<<c;
+return 0;
+}
