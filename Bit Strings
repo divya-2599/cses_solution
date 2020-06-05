@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+ll power(int x,ll n,ll mod)
+{
+    if(n==0)
+        return 1;
+    else if(n%2==0)
+    {
+        ll y=power(x,n/2,mod);
+        return (y*y)%mod;
+    }
+    else
+        return ((x%mod)*power(x,n-1,mod))%mod;
+}
+int main()
+{
+    ll n;
+    cin>>n;
+    cout<<power(2,n,1000000007);
+return 0;
+}
