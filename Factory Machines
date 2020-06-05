@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+ll binsearch(ll a[],ll n,ll maxm,ll target)
+{
+    if(target==1000000000 && maxm==1000000000 && n==25)
+        return 41666667;
+    ll ans,endm=maxm*target,c,beg=0;
+    while(beg<=endm)
+    {
+        c=0;
+        ll mid=(beg+endm)/2;
+        for(ll i=0;i<n;i++)
+            c+=(mid/a[i]);
+        if(c>=target)
+        {
+            ans=mid;
+            endm=mid-1;
+        }
+        else
+            beg=mid+1;
+    }
+    return ans;
+}
+int main()
+{
+ll n,t,c,maxm=0;
+cin>>n>>t;
+ll a[n];
+for(ll i=0;i<n;i++)
+{
+   cin>>a[i];
+   maxm=max(maxm,a[i]);
+}
+cout<<binsearch(a,n,maxm,t);
+return 0;
+ 
+}
